@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoView viewName="vwPosts" var="vwPosts"></xp:dominoView>
+	</xp:this.data>
+
+	<xp:viewPanel rows="20" id="viewPanelPosts" value="#{vwPosts}"
+		showColumnHeader="false" pageName="/post.xsp"
+		viewStyle="margin-bottom:20.0px">
+		<xp:this.facets>
+
+			<xp:viewTitle xp:key="viewTitle" id="viewTitle1"
+				value="Posts">
+			</xp:viewTitle>
+
+			<xp:pager partialRefresh="true" layout="Previous Group Next"
+				xp:key="footerPager" id="pager1">
+			</xp:pager>
+		</xp:this.facets>
+
+		<xp:viewColumn columnName="$0" id="viewColumn1"
+			rendered="false">
+			<xp:viewColumnHeader value="$0" id="viewColumnHeader1"></xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="Title" id="viewColumn2"
+			displayAs="link" openDocAsReadonly="true" showCheckbox="true">
+			<xp:viewColumnHeader value="Title" id="viewColumnHeader2"></xp:viewColumnHeader>
+		</xp:viewColumn>
+
+	</xp:viewPanel>
+	<xp:button value="New Post" id="btnNew" disableTheme="true"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+	<xp:this.action>
+		<xp:openPage name="/post.xsp" target="newDocument"></xp:openPage>
+	</xp:this.action></xp:eventHandler></xp:button>
+	<xp:button value="Delete Selected" id="btnDeleteSelected" disableTheme="true"><xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+	<xp:this.action>
+		<xp:deleteSelectedDocuments view="viewPanelPosts"
+			message="Are you sure?">
+		</xp:deleteSelectedDocuments>
+	</xp:this.action></xp:eventHandler></xp:button>
+</xp:view>

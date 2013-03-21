@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Comment Moderation"
+	pageIcon="/favicon.gif">
+
+	<xp:this.resources>
+		<xp:metaData name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1">
+		</xp:metaData>
+	</xp:this.resources>
+
+	<xp:this.acl>
+		<xp:acl>
+			<xp:this.entries>
+
+				<xp:aclEntry right="NOACCESS" type="ANONYMOUS">
+				</xp:aclEntry>
+				<xp:aclEntry type="ROLE" right="EDITOR">
+					<xp:this.name><![CDATA[[Admin]]]></xp:this.name>
+					<xp:this.fullName><![CDATA[[Admin]]]></xp:this.fullName>
+				</xp:aclEntry>
+			</xp:this.entries>
+		</xp:acl>
+	</xp:this.acl>
+
+	<xp:this.data>
+		<xp:dominoDocument var="document1"></xp:dominoDocument>
+	</xp:this.data>
+
+	<xc:frameMain>
+		<xp:this.facets>
+			<xc:column1 xp:key="Body">
+				<xp:this.facets>
+					<xp:panel xp:key="Body">
+
+						<xp:panel>
+							<xc:postPost></xc:postPost>
+						</xp:panel>
+						<xp:panel>
+							<xc:moderatePostComments
+								parentID="#{javascript:currentDocument.getDocument().getUniversalID();}">
+							</xc:moderatePostComments>
+						</xp:panel>
+					</xp:panel>
+				</xp:this.facets>
+			</xc:column1>
+			<xp:link escape="true" text="Moderation" id="lnkHome"
+				xp:key="Top menu">
+
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:openPage name="/moderate.xsp"></xp:openPage>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:link>
+
+			<xc:footer xp:key="Footer"></xc:footer>
+			<xc:legal xp:key="Legal"></xc:legal>
+			<xp:image url="/advert_adxbanner.png" id="image2"
+				xp:key="Top right advert">
+			</xp:image>
+			<xp:image url="/logo_oval.png" id="image1"
+				xp:key="Top left logo">
+			</xp:image>
+		</xp:this.facets>
+	</xc:frameMain>
+</xp:view>

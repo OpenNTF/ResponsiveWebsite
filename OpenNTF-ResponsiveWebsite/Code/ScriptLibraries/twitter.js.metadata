@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="80257B350077FEFA" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1b2" sequence="2" unid="17E3D9EF74FD3F25802579BD0071B2FD">
+<created><datetime>20120310T204153,89+00</datetime></created>
+<modified><datetime>20130321T215043,95+00</datetime></modified>
+<revised><datetime dst="true">20120524T122149,19+01</datetime></revised>
+<lastaccessed><datetime>20130321T215043,95+00</datetime></lastaccessed>
+<addedtofile><datetime>20130321T215043,95+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frank van der Linden/OU=EOF/O=EOG</name><name>CN=Martin Rolph/O=Oval</name></updatedby>
+<wassignedby><name>CN=Martin Rolph/O=Oval</name></wassignedby>
+<item name="$TITLE" sign="true"><text>twitter</text></item>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+</note>

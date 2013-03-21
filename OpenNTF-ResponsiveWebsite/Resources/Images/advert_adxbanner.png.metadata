@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="80257B350077FEFA" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="162" sequence="5" unid="7DD37C85C6BA5CBD802579B30052FF99">
+<created><datetime>20120229T150633,85+00</datetime></created>
+<modified><datetime>20130321T215042,38+00</datetime></modified>
+<revised><datetime dst="true">20120524T122144,70+01</datetime></revised>
+<lastaccessed><datetime>20130321T215042,38+00</datetime></lastaccessed>
+<addedtofile><datetime>20130321T215042,38+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Graham Simmons/O=Oval</name><name>CN=Martin Rolph/O=Oval</name></updatedby>
+<wassignedby><name>CN=Martin Rolph/O=Oval</name></wassignedby>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+
+
+<item name="$FileModDT" sign="true"><datetime>20120229T150611,55+00</datetime></item>
+<item name="$ImageNames" sign="true"><text>adxbanner.png</text></item>
+<item name="$TITLE" sign="true"><text>advert_adxbanner.png</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+<item name="$PublicAccess"><text>1</text></item></note>

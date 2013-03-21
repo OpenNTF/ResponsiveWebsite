@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.data>
+		<xp:dominoDocument var="dsPost" formName="frmPost"></xp:dominoDocument>
+	</xp:this.data>
+
+
+
+	<xp:button value="Save" id="btnSave"
+		rendered="#{javascript:dsPost.isEditable()}" disableTheme="true">
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="complete">
+			<xp:this.action>
+
+				<xp:actionGroup>
+
+
+					<xp:saveDocument var="dsPost"></xp:saveDocument>
+
+
+					<xp:openPage name="/allposts.xsp"></xp:openPage>
+				</xp:actionGroup>
+			</xp:this.action>
+		</xp:eventHandler>
+	</xp:button>
+	<xp:button value="Edit" id="btnEdit"
+		rendered="#{javascript:!dsPost.isEditable()}" disableTheme="true">
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="complete">
+			<xp:this.action>
+				<xp:changeDocumentMode mode="edit" var="dsPost"></xp:changeDocumentMode>
+			</xp:this.action>
+		</xp:eventHandler>
+	</xp:button>
+	<xp:button value="Close" id="btnClose" disableTheme="true">
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="complete">
+			<xp:this.action>
+				<xp:openPage name="/allposts.xsp"></xp:openPage>
+			</xp:this.action>
+		</xp:eventHandler>
+	</xp:button>
+
+	<xp:br></xp:br>
+	Title
+	<xp:inputText value="#{dsPost.Title}" id="title1"></xp:inputText>
+	<xp:br></xp:br>
+	<xp:inputRichText value="#{dsPost.Body}" id="body1" htmlFilter="acf"
+		htmlFilterIn="acf">
+		<xp:this.rendered><![CDATA[${javascript:if(context.getUserAgent().getUserAgent().match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+	return false;
+} else {
+	return true;
+}}]]></xp:this.rendered>
+	</xp:inputRichText>
+
+	<xp:br></xp:br>
+	<xp:inputTextarea id="inputTextarea1" value="#{dsPost.Body}">
+		<xp:this.rendered><![CDATA[#{javascript:if(context.getUserAgent().getUserAgent().match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+	return true;
+} else {
+	return false;
+}}]]></xp:this.rendered>
+	</xp:inputTextarea></xp:view>

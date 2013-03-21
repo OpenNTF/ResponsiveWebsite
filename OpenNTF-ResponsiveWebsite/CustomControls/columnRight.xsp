@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:link escape="true" text="" id="link1"
+		value="http://www.ovalbusinesssolutions.co.uk/campaigns/user-experience-delivered/" target="_blank">
+		<xp:image url="/coconut.jpg" id="image1"></xp:image>
+	</xp:link>
+	<xp:label value="User experience – delivered" id="label1"></xp:label></xp:view>

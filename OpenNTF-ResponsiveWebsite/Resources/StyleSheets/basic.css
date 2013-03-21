@@ -1,0 +1,172 @@
+/* Customizes a basic theme */
+
+/* =============================== */
+
+body {
+	font:normal .75em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #FAFAFA;
+	color: #414141;
+}
+
+/* =============================== */
+
+.panelContainer {
+
+}
+
+/* =============================== */
+
+.panelBannerBarOuter {
+	background-image: url(topbar.jpg);
+	height: 98px;
+}
+	.panelBannerBar {
+		height: auto;
+		-webkit-border-top-left-radius: 3px;
+		-webkit-border-top-right-radius: 3px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		margin-top: 15px;
+	}
+	
+/* =============================== */
+
+.panelTitleBar {	
+	height: 40px;
+	line-height: 29px;
+	color: #414141;
+}
+	.panelTitleBar a:link{color: #414141;}
+	.panelTitleBar a:active{color: #414141;}
+	.panelTitleBar a:hover{color: #414141;}
+	.panelTitleBar a:visited{color: #414141;}
+	
+	.panelTitleBarOuter {
+		background-image: url(titleshadow.png);
+		background-repeat: repeat-x;
+		background-position: bottom;
+	}
+
+/* =============================== */
+
+.panelMainBar {
+	overflow: auto;
+	height: auto;
+	position: relative;
+	background-color: #FAFAFA;
+	xpadding-top: 20px;
+}
+	.panelMainBar .panelMainBar .body {
+		overflow: hidden;
+	}
+	.panelMainBar .left {
+		
+	}
+		.panelMainBar .left .nav {
+			overflow: hidden;	
+		}
+		.panelMainBar .left .body {
+			background-color: #FAFAFA;
+		}
+	.panelMainBar .right {
+		overflow: hidden;
+	}
+	.panelMainBar .left .nav span, .panelMainBar .right span {
+		color: #585977;
+	}
+	
+/* =============================== */
+	
+.panelFooterBarOuter {
+	margin-top: 10px;
+	border-top: 7px solid #E3E3E3;
+	background-color: 	#F8F9FB;
+}
+
+.panelFooterBar {
+	color: #919191;
+	margin-bottom: 10px;
+}
+	.panelFooterBar .footer {
+		padding: 5px;
+		height: 30px;
+		line-height: 30px;
+	}
+
+/* =============================== */
+
+.panelLegalBar {
+	background-color: #F8F8F8;
+	height: auto;
+	line-height: 30px;
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-webkit-border-bottom-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+	.panelLegalBar .copy {
+		color: #C4C4C4;
+	}
+	.panelLegalBar .link a:link{color: #C4C4C4;}
+	.panelLegalBar .link a:active{color: #C4C4C4;}
+	.panelLegalBar .link a:hover{color: #C4C4C4;}
+	.panelLegalBar .link a:visited{color: #C4C4C4;}
+	
+/* =============================== */
+
+.panelArticle {
+	margin-bottom: 20px;
+	color: #777777;
+}
+	.panelArticle .title {
+		background-image: -moz-linear-gradient(top, #F4F4F4 0%, #EAEAEA 100%);
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#F4F4F4), to(#EAEAEA));
+		min-height: 30px;
+		line-height: 30px;
+		padding: 5px 10px;
+		border-left: 1px solid #CCCCCC;
+		border-top: 1px solid #CCCCCC;
+		border-right: 1px solid #CCCCCC;
+		-webkit-border-top-left-radius: 3px;
+		-webkit-border-top-right-radius: 3px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		color: #585977;
+						
+	}
+		.panelArticle .title span {
+			font-weight: bold;
+		}
+		.panelArticle .body {
+			background-color: #FFFFFF !important;
+			min-height: 0 !important;
+			padding: 5px 10px;
+			border-top: 1px solid #D1D1D1;
+			border-right: 1px solid #CCCCCC;
+			border-bottom: 1px solid #CCCCCC;
+			border-left: 1px solid #CCCCCC;
+		}
+		.panelArticle .footer {
+			background-color: #D1D1D1 !important;
+			padding: 5px 10px;
+			border-right: 1px solid #CCCCCC;
+			border-bottom: 1px solid #CCCCCC;
+			border-left: 1px solid #CCCCCC;
+			-webkit-border-bottom-left-radius: 3px;
+			-webkit-border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 3px;
+	font-size: 75%;
+		}
+			.panelArticle .footer a:link{color: #777777;}
+			.panelArticle .footer a:active{color: #777777;}
+			.panelArticle .footer a:hover{color: #777777;}
+			.panelArticle .footer a:visited{color: #777777;}
+
+/* =============================== */

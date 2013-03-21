@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	style="text-align:left">
+	<xp:this.data>
+		<xp:dominoView var="dsViewPosts" viewName="vwPosts"></xp:dominoView>
+	</xp:this.data>
+
+	<xp:panel></xp:panel>
+	<xp:repeat id="repeatPosts" rows="5" value="#{dsViewPosts}"
+		var="rowData" indexVar="repeatIndex">
+		<xp:panel>
+			<xp:panel styleClass="panelArticle">
+				<xp:this.style><![CDATA[#{javascript:"margin-left:" + (rowData.getIndentLevel().toFixed()*20) + "px"}]]></xp:this.style>
+				<xp:panel styleClass="title">
+					<xp:text escape="true" value="#{rowData.Title}">
+
+					</xp:text>
+
+				</xp:panel>
+				<xp:panel styleClass="body">
+
+					<xp:text escape="true" contentType="html">
+						<xp:this.value><![CDATA[#{javascript:var nd:NotesDocument = rowData.getDocument();
+var mime = nd.getMIMEEntity("body");
+// if it is MIME then you can passthrough as HTML
+if (mime != null) {
+      return mime.getContentAsText();
+}
+// Otherwise just return the plain text
+else {
+      return nd.getItemValueString("body");
+}}]]></xp:this.value>
+					</xp:text>
+
+				</xp:panel>
+				<xp:panel styleClass="footer">
+
+					<xp:text escape="true" id="computedField1" style="color:rgb(255,0,0)">
+
+						<xp:this.value><![CDATA[#{javascript://Get current document.
+var doc:NotesDocument = rowData.getDocument();
+
+//Try and get response count for current document.
+try {  
+
+	//Get lookup view.
+	var vw:NotesView = database.getView("vwPostComments");
+
+	//Get collection of response document for the current parent.
+    var dc:NotesDocumentCollection  = vw.getAllDocumentsByKey(doc.getUniversalID());
+    
+    //Remember count.
+    intTotal = dc.getCount().toFixed();
+    
+    //Get first document from collection.
+	var response = dc.getFirstDocument(); 
+	
+	//Loop all responses in collection.
+	while (response != null) {
+	
+		//Grab next response.
+		var responsetmp = dc.getNextDocument();
+		
+		//Remove response from collection if it is not moderated.
+		if (response.getItemValueString("Moderated") != "Yes") {
+			dc.deleteDocument(response);
+		} 
+		
+		//Releases response from memory.
+		response.recycle(); 
+		
+		//Set pointer to next response.
+		response = responsetmp;
+		
+	}
+    
+    //Return response count. 
+    if (intTotal == dc.getCount().toFixed()) {
+    	return "";
+    } else { 
+    	return "Moderated: " + dc.getCount().toFixed() + "/" + intTotal + " | ";
+    }
+      
+}catch (e){  
+	return e;
+}}]]></xp:this.value>
+					</xp:text>
+					
+					<xp:link escape="true" text="View Comments"
+						id="lnkCommentView">
+						
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action>
+							<xp:openPage name="/moderatecomments.xsp"
+								target="openDocument">
+								<xp:this.documentId><![CDATA[#{javascript:var doc:NotesDocument = rowData.getDocument();
+doc.getUniversalID()}]]></xp:this.documentId>
+							</xp:openPage>
+						</xp:this.action></xp:eventHandler></xp:link>
+					
+				</xp:panel>
+			</xp:panel>
+		</xp:panel>
+	</xp:repeat>
+	<xp:pager layout="Previous Group Next" partialRefresh="true"
+		id="pager1" for="repeatPosts">
+	</xp:pager>
+</xp:view>

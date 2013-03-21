@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="All Posts">
+
+
+	<xp:this.resources>
+		<xp:metaData name="viewport" content="width=device-width"></xp:metaData>
+	</xp:this.resources>
+	<xp:this.acl>
+		<xp:acl>
+			<xp:this.entries>
+
+				<xp:aclEntry right="NOACCESS" type="ANONYMOUS">
+				</xp:aclEntry>
+				<xp:aclEntry type="ROLE" right="EDITOR">
+					<xp:this.name><![CDATA[[Admin]]]></xp:this.name>
+					<xp:this.fullName><![CDATA[[Admin]]]></xp:this.fullName>
+				</xp:aclEntry>
+			</xp:this.entries>
+		</xp:acl>
+	</xp:this.acl>
+	<xc:frameMain>
+		<xp:this.facets>
+			<xp:link escape="true" text="Home" id="link1"
+				xp:key="Top menu">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:openPage name="/home.xsp"></xp:openPage>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:link>
+			<xc:listPosts xp:key="Body"></xc:listPosts>
+			<xc:legal xp:key="Legal"></xc:legal>
+			<xc:footer xp:key="Footer"></xc:footer>
+			<xp:image url="/advert_adxbanner.png" id="image2"
+				xp:key="Top right advert">
+			</xp:image>
+			<xp:image url="/logo_oval.png" id="image1"
+				xp:key="Top left logo">
+			</xp:image>
+		</xp:this.facets>
+	</xc:frameMain>
+</xp:view>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoDocument var="newcomment" formName="frmComment"
+			ignoreRequestParams="true" computeWithForm="onsave">
+			<xp:this.parentId><![CDATA[#{javascript:sessionScope.get("docID")
+//compositeData.parentID}]]></xp:this.parentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+
+
+
+
+	
+	
+	
+	
+	<xp:span style="font-weight:bold;font-size:12pt">
+		Leave a comment</xp:span>
+	<xp:br></xp:br>
+	<xp:br></xp:br>
+	Your comment will be visible until your session times out or you close your browser then it will require moderation to be visible.<xp:br></xp:br>
+	<xp:br></xp:br>
+	<xp:label value="Title" id="label1"></xp:label>
+	<xp:inputText value="#{newcomment.Title}" id="title1"></xp:inputText>
+	
+	<xp:inputRichText value="#{newcomment.Body}" id="body1"
+		htmlFilter="acf" htmlFilterIn="acf">
+		<xp:this.rendered><![CDATA[#{javascript:if(context.getUserAgent().getUserAgent().match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+	return false;
+} else {
+	return true;
+}}]]></xp:this.rendered>
+	</xp:inputRichText>
+
+	<xp:inputTextarea id="inputTextarea1" value="#{newcomment.Body}">
+		<xp:this.rendered><![CDATA[#{javascript:if(context.getUserAgent().getUserAgent().match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+	return true;
+} else {
+	return false;
+}}]]></xp:this.rendered>
+	</xp:inputTextarea>
+	<xp:br></xp:br>
+	
+	<xp:button value="Submit comment" id="btnSave"
+		disableTheme="true">
+
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="partial">
+			<xp:this.action>
+
+
+				<xp:actionGroup>
+					<xp:actionGroup>
+
+						<xp:modifyField name="Moderated"
+							var="newcomment" value="No">
+						</xp:modifyField>
+						<xp:modifyField name="SessionID"
+							value="#{javascript:facesContext.getExternalContext().getRequest().getSession().getId();}"
+							var="newcomment">
+						</xp:modifyField>
+						<xp:saveDocument var="newcomment"></xp:saveDocument>
+
+						<xp:modifyField var="newcomment" name="Body">
+							<xp:this.value><![CDATA[#{javascript:""}]]></xp:this.value>
+						</xp:modifyField>
+						<xp:modifyField name="Title" var="newcomment">
+							<xp:this.value><![CDATA[#{javascript:""}]]></xp:this.value>
+						</xp:modifyField>
+
+
+					</xp:actionGroup>
+
+				</xp:actionGroup>
+			</xp:this.action>
+		</xp:eventHandler>
+	</xp:button>
+
+
+<xp:br></xp:br><xp:br></xp:br>
+	<xp:inputText value="#{newcomment.Moderated}" id="moderated1" rendered="false">
+	</xp:inputText>
+	<xp:inputText value="#{newcomment.SessionID}" id="sessionID1" rendered="false">
+	</xp:inputText>
+	
+	</xp:view>

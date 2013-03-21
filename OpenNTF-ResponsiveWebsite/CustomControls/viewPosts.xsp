@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	style="text-align:left">
+	<xp:this.data>
+		<xp:dominoView var="dsViewPosts" viewName="vwPosts"></xp:dominoView>
+	</xp:this.data>
+
+	<xp:panel></xp:panel>
+	<xp:repeat id="repeatPosts" rows="5" value="#{dsViewPosts}"
+		var="rowData" indexVar="repeatIndex">
+		<xp:panel>
+			<xp:panel styleClass="panelArticle">
+				<xp:this.style><![CDATA[#{javascript:"margin-left:" + (rowData.getIndentLevel().toFixed()*20) + "px"}]]></xp:this.style>
+				<xp:panel styleClass="title">
+					<xp:text escape="true" value="#{rowData.Title}">
+
+					</xp:text>
+
+				</xp:panel>
+				<xp:panel styleClass="body">
+
+					<xp:text escape="true" contentType="html">
+						<xp:this.value><![CDATA[#{javascript:var nd:NotesDocument = rowData.getDocument();
+var mime = nd.getMIMEEntity("body");
+// if it is MIME then you can passthrough as HTML
+if (mime != null) {
+      return mime.getContentAsText();
+}
+// Otherwise just return the plain text
+else {
+      return nd.getItemValueString("body");
+}}]]></xp:this.value>
+					</xp:text>
+
+				</xp:panel>
+				<xp:panel styleClass="footer">
+
+					<xp:link escape="true" text="View Post"
+						id="lnkCommentView">
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="complete">
+							<xp:this.action>
+
+
+								<xp:actionGroup>
+									<xp:actionGroup>
+
+
+
+										<xp:executeScript>
+											<xp:this.script><![CDATA[#{javascript:var doc:NotesDocument = rowData.getDocument();
+sessionScope.put("docID", doc.getUniversalID());}]]></xp:this.script>
+										</xp:executeScript>
+
+
+
+
+
+
+
+										<xp:openPage
+											name="/postcomments.xsp" target="openDocument">
+
+										</xp:openPage>
+									</xp:actionGroup>
+
+								</xp:actionGroup>
+							</xp:this.action>
+						</xp:eventHandler>
+					</xp:link>
+					&#160;|&#160;Comments:
+					<xp:text escape="true" id="computedField1">
+
+						<xp:this.value><![CDATA[#{javascript://Get current document.
+var doc:NotesDocument = rowData.getDocument();
+
+//Try and get response count for current document.
+try {  
+
+	//Get lookup view.
+	var vw:NotesView = database.getView("vwPostComments");
+
+	//Get collection of response document for the current parent.
+    var dc:NotesDocumentCollection  = vw.getAllDocumentsByKey(doc.getUniversalID());
+    
+    //Get first document from collection.
+	var response = dc.getFirstDocument(); 
+	
+	//Loop all responses in collection.
+	while (response != null) {
+	
+		//Grab next response.
+		var responsetmp = dc.getNextDocument();
+		
+		//Remove response from collection if it is not moderated.
+		if (response.getItemValueString("Moderated") != "Yes" && response.getItemValueString("SessionID") != sessionScope.get("sID")) {
+			dc.deleteDocument(response);
+		} 
+		
+		//Releases response from memory.
+		response.recycle(); 
+		
+		//Set pointer to next response.
+		response = responsetmp;
+		
+	}
+    
+    //Return response count.  
+    return dc.getCount().toFixed();
+      
+}catch (e){  
+	return e;
+}}]]></xp:this.value>
+					</xp:text>
+					</xp:panel>
+			</xp:panel>
+		</xp:panel>
+	</xp:repeat>
+	<xp:pager layout="Previous Group Next" partialRefresh="true"
+		id="pager1" for="repeatPosts">
+	</xp:pager>
+	</xp:view>

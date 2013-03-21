@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='80257B350077FEFA'>
+<noteinfo noteid='182' unid='2AD32F5E6D318ECD802579B9003DE638' sequence='16'>
+<created><datetime>20120306T111606,32+00</datetime></created>
+<modified><datetime>20130321T215042,95+00</datetime></modified>
+<revised><datetime dst='true'>20120524T122145,51+01</datetime></revised>
+<lastaccessed><datetime>20130321T215042,95+00</datetime></lastaccessed>
+<addedtofile><datetime>20130321T215042,95+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Martin Rolph/O=Oval</name></updatedby>
+<wassignedby><name>CN=Martin Rolph/O=Oval</name></wassignedby>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$HTMLCode' sign='true'>
+<rawitemdata type='1'>
+X/8QAAIADwAHAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$TITLE'><textlist><text>Comment</text><text>frmComment</text></textlist></item>
+<item name='$Info' sign='true'>
+<rawitemdata type='1'>
+hhgBAIgAAAAAgAAAAQABAP///wAAAAAA
+</rawitemdata></item>
+<item name='$Flags'><text>C</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>frmComment</text></item>
+<item name='Title' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='Body' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='Moderated' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='SessionID' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='$Fields'><textlist><text>SessionID</text><text>Moderated</text><text
+>Body</text><text>Title</text><text>$PublicAccess</text></textlist></item>
+<item name='$Body' sign='true'>
+<rawitemdata type='1'>
+gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8WAAEAAApQdWJsaWMgQWNj
+ZXNzIN0GAACK//7/UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgAeAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiv9AAIAAAAUAMAIAAAAAAAACAQAACg4A
+AAAAAAAADQAAAAAADgAAAAwAAQABADEAAwAkUHVibGljQWNjZXNzAGIOAQCEAAAAAAAAAAAA3gYA
+AIr/hf8IAAEAAAqBAoMEAQCF/w8AAQAAClRpdGx0ZSAA3QYAAIr//v9QAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAeAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAACK/yoAigAABQAwAgAAAAAAAAIBAAAKAAAAAAAAAAAFAAAAAABUaXRsZQBiDgEAhAAAAAAA
+AAAAAN4GAACK/4X/CAABAAAKgQKDBAEAhf8NAAEAAApCb2R5IADdBgAAiv/+/1AAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAIr/KACCAAEAAAACAAAAAAAAAgEAAAoAAAAAAAAAAAQAAAAAAEJvZHliDgEAhAAA
+AAAAAQAAAN4GAACK/4X/CAABAAAKgQKDBAEAhf8SAAEAAApNb2RlcmF0ZWQg3QYAAIr//v9QAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAACw/xQAAAAEIAAAAAAAAAAAAAAAAIr/NACKQgEFAiACAAAAAAAAAgEA
+AAoAAAAAAAAAAAkAAAAHAE1vZGVyYXRlZAEAAwBZZXPeBgAAiv+F/wgAAQAACoECgwQBAIX/EwAB
+AAAKU2Vzc2lvbiBJRCAA3QYAAIr//v9QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAeAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACK/y4AigAABQAwAgAA
+AAAAAAIBAAAKAAAAAAAAAAAJAAAAAABTZXNzaW9uSUQAYg4BAIQAAAAAAAAAAADeBgAAiv+F/wgA
+AQAACg==
+</rawitemdata></item>
+<item name='$PublicAccess'><text>1</text></item></note>
+

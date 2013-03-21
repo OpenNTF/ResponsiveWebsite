@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='80257B350077FEFA'>
+<noteinfo noteid='116' unid='B0DBEED06EF9E8AF802579B3003BDF93' sequence='20'>
+<created><datetime>20120229T105358,59+00</datetime></created>
+<modified><datetime>20130321T215050,30+00</datetime></modified>
+<revised><datetime>20130321T215050,29+00</datetime></revised>
+<lastaccessed><datetime>20130321T215050,30+00</datetime></lastaccessed>
+<addedtofile><datetime>20130321T215041,10+00</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Graham Simmons/O=Oval</name><name>CN=Adam Foster/O=Oval</name><name
+>CN=Martin Rolph/O=Oval</name><name>CN=Adam Foster/O=Oval</name><name>CN=Martin Rolph/O=Oval</name></updatedby>
+<item name='IconBitmap' summary='true'>
+<rawitemdata type='6'>
+AiAgAQAA///////wD///gAH//gAAf/wAAD/4AAAf8AAAD+AAAAfgAAAHwAAAA8AAAAPAAAADgAAA
+AYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAHAAAADwAAAA8AAAAPgAAAH4AAAB/AAAA/4AAAf
+/AAAP/4AAH//gAH///AP//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiAAAAAAAAAAAAAAI
+jPZmZm/IgAAAAAAAAAAIjGZmZmZmZsiAAAAAAAAAjGZmZmZmZmZmyAAAAAAACMZmZmZmZmZmZmyA
+AAAAAIxmZmZmZmZmZmZmyAAAAAjGZmZmZmZmZmZmZmyAAAAIZmbyL2byL2byL2ZmgAAAjGZmIiJm
+IiJmIiJmZsgAAIZmZiIiZiIiZiIiZmZoAADGZmYiImYiImYiImZmbAAI9mZmIiJmIiJmIiJmZm+A
+CGZmZiIiZiIiZiIiZmZmgAhmZmYiImYiImYiImZmZoAIZmZmIiJmIiJmIiJmZmaACGZvIiIiZiIi
+ZiIiIvZmgAhmYiIiImYiImYiIiImZoAIZm8iIi9m8i9m8iIi9maACPZmZmZmZmZmZmZmZmZvgADG
+ZmbyL2byL2byL2ZmbAAAj2ZmIiJmIiJmIiJmZvgAAIxmZiIiZiIiZiIiZmbIAAAI9mbyL2byL2by
+L2ZvgAAACMZmZmZmZmZmZmZmbIAAAACMZmZmZmZmZmZmZsgAAAAACMZmZmZmZmZmZmyAAAAAAACM
+9mZmZmZmZm/IAAAAAAAACIz2ZmZmZm/IgAAAAAAAAAAIiMZmZmyIgAAAAAAAAAAAAACIiIiIAAAA
+AAAAUEECICABAAD/////+A4DgA==
+</rawitemdata></item>
+<item name='$DBTheme'><text>Basic.theme</text></item>
+<item name='$DefaultXPage'><text>home.xsp</text></item>
+<item name='$FlagsNoRefresh'><text/></item>
+<item name='$Flags'><text>J7!zf</text></item>
+<item name='$Daos'><text>0</text></item>
+<item name='$TITLE'><text>Oval RWD : OpenNTF</text></item></note>
+

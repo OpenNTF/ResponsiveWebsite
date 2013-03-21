@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xp_1="http://www.ibm.com/xsp/coreex">
+
+
+	<xp:panel>
+		<xp:repeat id="repeat1" rows="30" var="rowDoc">
+			<xp:this.value><![CDATA[#{javascript://Get current Post document.
+var doc:NotesDocument = database.getDocumentByUNID(compositeData.parentID);
+
+//Get all Post responses.
+doc.getResponses();}]]></xp:this.value>
+			<xp:panel styleClass="panelArticle"
+				style="margin-left: 20px;">
+				<xp:this.data>
+							<xp:dominoDocument var="docComment"
+								action="editDocument"
+								documentId="#{javascript:rowDoc.getNoteID()}"
+								formName="frmComment" ignoreRequestParams="true">
+							</xp:dominoDocument>
+						</xp:this.data>
+
+
+				<xp:panel styleClass="title">
+					<xp:panel style="width:48%; float:left;">
+						<xp:text escape="false" id="computedField1">
+							<xp:this.value><![CDATA[#{javascript:var nd:NotesDocument = rowDoc;
+var mime = nd.getMIMEEntity("title");
+// if it is MIME then you can passthrough as HTML
+if (mime != null) {
+      return mime.getContentAsText();
+}
+// Otherwise just return the plain text
+else {
+      return nd.getItemValueString("title");
+}}]]></xp:this.value>
+						</xp:text>
+					</xp:panel>
+					<xp:panel
+						style="width:48%; float:right; text-align:right;">
+						
+						<xp:checkBox text="Approved" id="chkApproved"
+							value="#{docComment.Moderated}" checkedValue="Yes">
+						<xp:eventHandler event="onclick" submit="true" refreshMode="norefresh">
+							<xp:this.action>
+
+								<xp:actionGroup>
+
+
+									<xp:save></xp:save>
+								</xp:actionGroup>
+							</xp:this.action></xp:eventHandler></xp:checkBox>
+
+					</xp:panel>
+				</xp:panel>
+				<xp:panel styleClass="body">
+					<xp:text escape="false" id="computedField2">
+						<xp:this.value><![CDATA[#{javascript:var nd:NotesDocument = rowDoc;
+var mime = nd.getMIMEEntity("body");
+// if it is MIME then you can passthrough as HTML
+if (mime != null) {
+      return mime.getContentAsText();
+}
+// Otherwise just return the plain text
+else {
+      return nd.getItemValueString("body");
+}}]]></xp:this.value>
+					</xp:text>
+				</xp:panel>
+
+			</xp:panel>
+		</xp:repeat>
+	</xp:panel>
+</xp:view>

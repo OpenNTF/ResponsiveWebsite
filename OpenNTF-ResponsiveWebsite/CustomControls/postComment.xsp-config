@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>postComment</component-type>
+    <composite-name>postComment</composite-name>
+    <composite-file>/postComment.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>parentID</property-name>
+      <property-class>string</property-class>
+      <display-name>parentID</display-name>
+      <property-extension>
+        <designer-extension>
+          <default-value>null</default-value>
+        </designer-extension>
+      </property-extension>
+    </property>
+  </composite-component>
+</faces-config>

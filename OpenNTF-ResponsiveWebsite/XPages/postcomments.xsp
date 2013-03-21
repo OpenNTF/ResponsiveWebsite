@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageIcon="/favicon.gif">
+
+	<xp:this.resources>
+		<xp:metaData name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1">
+		</xp:metaData>
+	</xp:this.resources>
+	<xp:this.data>
+		<xp:dominoDocument var="document1">
+			<xp:this.parentId><![CDATA[#{javascript:requestScope.get("docID")}]]></xp:this.parentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xc:frameMain>
+		<xp:this.facets>
+			<xp:link escape="true" text="Home" id="lnkHome"
+				xp:key="Top menu">
+
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:openPage name="/home.xsp"></xp:openPage>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:link>
+			<xc:column3 xp:key="Body">
+				<xp:this.facets>
+					<xc:columnLeft xp:key="Body column 1"></xc:columnLeft>
+					<xc:columnRight xp:key="Body column 3"></xc:columnRight>
+					<xp:panel xp:key="Body column 2">
+						<xp:panel>
+
+							<xc:postPost></xc:postPost>
+						</xp:panel>
+						<xp:panel>
+
+							<xc:postPostComments
+								parentID="#{javascript:currentDocument.getDocument().getUniversalID();}">
+							</xc:postPostComments>
+						</xp:panel>
+						<xp:panel>
+							<xc:postComment
+								parentID="#{javascript:currentDocument.getDocument().getUniversalID();}">
+							</xc:postComment>
+						</xp:panel>
+					</xp:panel>
+
+
+				</xp:this.facets>
+			</xc:column3>
+			<xc:footer xp:key="Footer"></xc:footer>
+			<xc:legal xp:key="Legal"></xc:legal>
+			<xp:image url="/advert_adxbanner.png" id="image2"
+				xp:key="Top right advert">
+			</xp:image>
+			<xp:image url="/logo_oval.png" id="image1"
+				xp:key="Top left logo">
+			</xp:image>
+		</xp:this.facets>
+	</xc:frameMain>
+</xp:view>

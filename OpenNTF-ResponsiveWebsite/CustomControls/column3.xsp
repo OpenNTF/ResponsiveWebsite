@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+<xp:panel styleClass="panelMainBar" themeId="Panel.mainBar3C">
+			<xp:panel styleClass="left" themeId="Panel.mainBarLeft">
+				<xp:panel styleClass="nav" themeId="Panel.mainBarLeftNav">
+					<xp:callback facetName="Body column 1" id="bodycol1"></xp:callback>
+				</xp:panel>
+				<xp:panel styleClass="body" themeId="Panel.mainBarLeftBody">
+					<xp:callback facetName="Body column 2" id="bodycol2"></xp:callback>
+				</xp:panel>
+			</xp:panel>
+			<xp:panel styleClass="right" themeId="Panel.mainBarRight">
+				<xp:callback facetName="Body column 3" id="bodycol3"></xp:callback>
+			</xp:panel>
+		</xp:panel>
+
+</xp:view>

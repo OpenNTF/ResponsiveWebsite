@@ -1,0 +1,175 @@
+<!--
+	The default theme contents use theme inheritance.
+
+	Application themes can extend an existing global theme using the
+	extends attribute.  Existing themes include the following options:
+
+	1. webstandard 2. oneui 3. notes
+-->
+<theme extends="webstandard" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd" >
+	<!-- 
+		Use this pattern to include resources (such as style sheets
+		and JavaScript files that are used by this theme.
+	-->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>base.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>layout.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>skeleton.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>basic.css</href>
+	</resource>
+
+	<!--
+		Use this pattern to define property name/value pairs for controls
+	-->
+	<control>
+		<name>Panel.container</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>container</value>
+		</property>
+	</control>
+	
+	<!-- Banner Bar -->
+	
+	<control>
+		<name>Panel.bannerBar</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>sixteen columns</value>
+		</property>
+	</control>
+	<control>
+		<name>Panel.bannerBarLeft</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>three columns alpha</value>
+		</property>
+	</control>
+	<control>
+		<name>Panel.bannerBarRight</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>thirteen columns omega</value>
+		</property>
+	</control>
+			
+	<!--  Title Bar -->
+	
+	<control>
+		<name>Panel.titleBar</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>sixteen columns</value>
+		</property>
+	</control>
+	
+	<!-- Main Bar -->
+	
+	<control>
+		<name>Panel.mainBar</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>sixteen columns</value>
+		</property>
+	</control>
+	<control>
+		<name>Panel.mainBar3C</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>sixteen columns alpha</value>
+		</property>
+	</control>
+	<control>
+		<name>Panel.mainBarLeft</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>twelve columns alpha</value>
+		</property>
+	</control>
+	<control>
+		<name>Panel.mainBarLeftNav</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>four columns alpha</value>
+		</property>
+	</control>
+	<control>
+		<name>Panel.mainBarLeftBody</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>eight columns omega</value>
+		</property>
+	</control>	
+	<control>
+		<name>Panel.mainBarRight</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>four columns omega</value>
+		</property>
+	</control>
+	
+	<!-- Footer Bar -->
+	
+	<control>
+		<name>Panel.footerBar</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>sixteen columns</value>
+		</property>
+	</control>
+	
+	<!-- Legal Bar -->
+	
+	<control>
+		<name>Panel.legalBar</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>sixteen columns</value>
+		</property>
+	</control>
+	<control>
+		<name>Panel.legalBarCopy</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>eight columns alpha</value>
+		</property>
+	</control>
+	<control>
+		<name>Panel.legalBarLink</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>eight columns omega</value>
+		</property>
+	</control>
+	
+	<!-- Article -->
+	
+	<control>
+		<name>Panel.Article</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value></value>
+		</property>
+	</control>
+	
+	<!-- Articles View -->
+	
+	<control>
+		<name>Panel.View</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>sixteen columns alpha</value>
+		</property>
+	</control>
+	
+</theme>

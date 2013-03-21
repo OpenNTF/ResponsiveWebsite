@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+			
+	<xp:panel styleClass="copy" themeId="Panel.legalBarCopy"> 
+		© Oval Business Solutions&#160;<xp:text escape="true" id="computedField1" value="#{javascript:@Text(@Year(@Now()))}"></xp:text>
+	</xp:panel>
+	
+	<xp:panel styleClass="link" themeId="Panel.legalBarLink">		  
+		<xp:link escape="true" text="www.OvalBusinessSolutions.co.uk" id="link2" value="http://www.OvalBusinessSolutions.co.uk" target="_blank"></xp:link>
+	</xp:panel>
+	
+</xp:view>

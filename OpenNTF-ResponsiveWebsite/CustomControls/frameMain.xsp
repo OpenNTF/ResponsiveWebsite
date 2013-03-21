@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:panel styleClass="panelBannerBarOuter" themeId="Panel.bannerBarOuter">
+		<xp:panel styleClass="panelContainer" themeId="Panel.container">
+			<xp:panel styleClass="panelBannerBar" themeId="Panel.bannerBar">
+			
+				<xp:panel styleClass="left" themeId="Panel.bannerBarLeft">
+					<xp:callback facetName="Top left logo" id="bannerlogo"></xp:callback>
+				</xp:panel>
+				
+				<xp:panel styleClass="right" themeId="Panel.bannerBarRight">
+					<xp:callback facetName="Top right advert" id="callback3"></xp:callback>
+				</xp:panel>
+				
+			</xp:panel>
+		</xp:panel>
+	</xp:panel>
+	
+	<xp:panel styleClass="panelTitleBarOuter">
+		<xp:panel styleClass="panelContainer" themeId="Panel.container">
+		
+			<xp:panel styleClass="panelTitleBar" themeId="Panel.titleBar">
+				<xp:callback facetName="Top menu" id="topmenu"></xp:callback>
+			</xp:panel>
+		</xp:panel>
+	</xp:panel>
+	
+	<xp:panel styleClass="panelContainer" themeId="Panel.container">
+		<xp:panel styleClass="panelMainBar" themeId="Panel.mainBar">
+			<xp:callback facetName="Body" id="body"></xp:callback>
+		</xp:panel>
+	</xp:panel>
+	
+	<xp:panel styleClass="panelFooterBarOuter">
+		<xp:panel styleClass="panelContainer" themeId="Panel.container">
+			<xp:panel styleClass="panelFooterBar" themeId="Panel.footerBar">
+				<xp:callback facetName="Footer" id="footer"></xp:callback>
+			</xp:panel>
+			
+			<xp:panel styleClass="panelLegalBar" themeId="Panel.legalBar">
+				<xp:callback facetName="Legal" id="legal"></xp:callback>
+			</xp:panel>
+			
+		</xp:panel>
+	</xp:panel>
+</xp:view>

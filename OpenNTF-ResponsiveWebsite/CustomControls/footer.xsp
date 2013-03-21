@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:panel styleClass="footer" themeId="Panel.footer">
+		<xp:text escape="true" id="LoggedInAs">
+			<xp:this.value><![CDATA[#{javascript:if(@UserName()=="Anonymous") {
+""
+} else {
+	"Logged in as: " + @Name("[CN]",@UserName())
+}}]]></xp:this.value>
+		</xp:text>
+		
+		
+		
+	</xp:panel>
+</xp:view>

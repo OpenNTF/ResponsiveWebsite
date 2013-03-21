@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+
+	<xp:this.dataContexts>
+		<xp:dataContext var="docID">
+			<xp:this.value><![CDATA[#{javascript:requestScope.get("docID")}]]></xp:this.value>
+		</xp:dataContext>
+	</xp:this.dataContexts>
+	<xp:panel>
+		<xp:repeat id="repeat1" rows="30" var="rowDoc">
+			<xp:this.value><![CDATA[#{javascript://Get current Post document.
+//var doc:NotesDocument = database.getDocumentByUNID(compositeData.parentID);
+var doc:NotesDocument = database.getDocumentByUNID(sessionScope.get("docID"));
+
+//Get all Post responses.
+var dc = doc.getResponses();
+
+//Get first response from collection.
+var response = dc.getFirstDocument(); 
+
+//Loop all responses in collection.
+while (response != null) {
+
+	//Grab next document.
+	var responsetmp = dc.getNextDocument();
+	
+	//Remove document from collection if it is not moderated.
+	if (response.getItemValueString("Moderated") != "Yes" && response.getItemValueString("SessionID") != sessionScope.get("sID")) {
+		dc.deleteDocument(response);
+	} 
+	
+	//Releases document from memory.
+	response.recycle(); 
+	
+	//Set pointer to next document.
+	response = responsetmp;
+	
+}
+
+//Return collection with un-moderated comments removed.
+dc}]]></xp:this.value>
+			<xp:panel styleClass="panelArticle"
+				style="margin-left: 20px;">
+
+				<xp:panel styleClass="title">
+					<xp:text escape="false" id="computedField1">
+						<xp:this.value><![CDATA[#{javascript:var nd:NotesDocument = rowDoc;
+var mime = nd.getMIMEEntity("title");
+// if it is MIME then you can passthrough as HTML
+if (mime != null) {
+      return mime.getContentAsText();
+}
+// Otherwise just return the plain text
+else {
+      return nd.getItemValueString("title");
+}}]]></xp:this.value>
+					</xp:text>
+				</xp:panel>
+				<xp:panel styleClass="body">
+					<xp:text escape="false" id="computedField2">
+						<xp:this.value><![CDATA[#{javascript:var nd:NotesDocument = rowDoc;
+var mime = nd.getMIMEEntity("body");
+// if it is MIME then you can passthrough as HTML
+if (mime != null) {
+      return mime.getContentAsText();
+}
+// Otherwise just return the plain text
+else {
+      return nd.getItemValueString("body");
+}}]]></xp:this.value>
+					</xp:text>
+				</xp:panel>
+
+			</xp:panel>
+		</xp:repeat>
+	</xp:panel>
+</xp:view>
